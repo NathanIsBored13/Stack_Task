@@ -7,11 +7,11 @@ namespace Stack_Task
     class Program
     {
         private static bool running = true;
-        private static readonly Stack examStack = new();
+        private static readonly Stack examStack = new Stack();
 
         static void Main()
         {
-            List<Menue.MenueItem> options = new()
+            List<Menue.MenueItem> options = new List<Menue.MenueItem>()
             {
                 new Menue.MenueItem("Push to the stack", Push, true),
                 new Menue.MenueItem("Pop from the stack", Pop, true),
@@ -19,7 +19,7 @@ namespace Stack_Task
                 new Menue.MenueItem("Quit", null, false)
             };
 
-            Menue menue = new("select a action", ">> ", true, options);
+            Menue menue = new Menue("select a action", ">> ", true, options);
 
             int selected;
             do
@@ -30,13 +30,13 @@ namespace Stack_Task
 
         private static void Push()
         {
-            List<Menue.MenueItem> options = new()
+            List<Menue.MenueItem> options = new List<Menue.MenueItem>()
             {
                 new Menue.MenueItem("Enter new data", Console.Clear, false),
                 new Menue.MenueItem("Return to menue", null, false),
             };
 
-            Menue menue = new("Error, exam object could not be created. Select an option", ">> ", false, options);
+            Menue menue = new Menue("Error, exam object could not be created. Select an option", ">> ", false, options);
             bool loop = true;
 
             do

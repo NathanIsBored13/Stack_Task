@@ -23,7 +23,7 @@ namespace Stack_Task
         }
 
         private readonly string header, prompt;
-        private readonly List<MenueItem> options = new();
+        private readonly List<MenueItem> options = new List<MenueItem>();
         private readonly bool clear;
 
         public Menue(string header, string prompt, bool clear, List<MenueItem> options)
