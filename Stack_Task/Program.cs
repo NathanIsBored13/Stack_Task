@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Stack_Task
 {
     class Program
     {
-        private static bool running = true;
         private static readonly Stack examStack = new Stack();
 
         static void Main()
@@ -21,11 +19,7 @@ namespace Stack_Task
 
             Menue menue = new Menue("select a action", ">> ", true, options);
 
-            int selected;
-            do
-            {
-                selected = menue.Display();
-            } while (selected != 3);
+            while (menue.Display() != 3) ;
         }
 
         private static void Push()
