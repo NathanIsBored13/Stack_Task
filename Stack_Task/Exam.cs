@@ -5,24 +5,20 @@ namespace Stack_Task
     class Exam
     {
         //public readonly get methods
-        public string Name { get => name; }
-        public int Score1 { get => score1; }
-        public int Score2 { get => score2; }
-
-        //exam values
-        private readonly string name;
-        private readonly int score1, score2;
+        public string Name { get; }
+        public int Score1 { get; }
+        public int Score2 { get; }
 
         public Exam(string name, int score1, int score2)
         {
             //saves passed data in internal variables
-            this.name = name;
-            this.score1 = Clamp(score1);
-            this.score2 = Clamp(score2);
+            Name = name;
+            Score1 = Clamp(score1);
+            Score2 = Clamp(score2);
         }
 
         //returns the object as a string
-        public override string ToString() => $"the student {name} scored {score1} on test 1 and {score2} on test 2";
+        public override string ToString() => $"the student {Name} scored {Score1} on test 1 and {Score2} on test 2";
 
         public static Exam MakeExam(string name, string scores)
         {
